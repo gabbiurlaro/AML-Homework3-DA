@@ -15,7 +15,7 @@ def pil_loader(path):
 
 
 class PACS(VisionDataset):
-    def __init__(self, root, split='train', transform=None, target_transform=None):
+    def __init__(self, root, split='train', domain=None, transform=None, target_transform=None):
         super(PACS, self).__init__(root, transform=transform, target_transform=target_transform)
 
         self.split = split # define the split, default is train -> per ora inutilizzato
