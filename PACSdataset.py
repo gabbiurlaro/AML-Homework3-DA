@@ -21,8 +21,12 @@ class PACS(VisionDataset):
         self.split = split # define the split, default is train -> per ora inutilizzato
         self.images = list()
         self.labels = list()
-        labels_path = [f"{self.root}txt_lists/{x}" for x in os.listdir(f"{self.root}txt_lists")]
-
+        self.domain = domain
+        if self.domain is None:
+            labels_path = [f"{self.root}txt_lists/{x}" for x in os.listdir(f"{self.root}txt_lists")]
+        else:
+            labels_path = [f"{self.root}txt_lists/{self.domain}"]
+            
         for domain in labels_path:
           with open(domain) as file:
             for line in file:
