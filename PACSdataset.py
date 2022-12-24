@@ -25,7 +25,7 @@ class PACS(VisionDataset):
         if self.domain is None:
             labels_path = [f"{self.root}txt_lists/{x}" for x in os.listdir(f"{self.root}txt_lists")]
         else:
-            labels_path = [f"{self.root}txt_lists/{self.domain}"]
+            labels_path = [f"{self.root}txt_lists/{self.domain}.txt"]
             
         for domain in labels_path:
           with open(domain) as file:
