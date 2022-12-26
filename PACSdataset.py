@@ -32,7 +32,7 @@ class PACS(VisionDataset):
             for line in file:
               [path, label] = line.rstrip().split()
               self.images.append(pil_loader(f"{self.root}PACS/{path}"))
-              self.labels.append(label)
+              self.labels.append(int(label))
 
     def __getitem__(self, index):
         '''
